@@ -18,6 +18,8 @@
 .ceremony-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
 .ceremony-grid .ceremony-tile{border:1px solid #d2dfe9;background:#fff;border-radius:10px;padding:18px 20px}
 @media(max-width:720px){.ceremony-hero{padding:20px}.ceremony-grid{grid-template-columns:1fr}.ceremony-hero .ceremony-place{font-size:17px}}
+/* 现场保障表格：项目名称保持单行显示 */
+#support .tablewrap table{min-width:720px}#support .tablewrap td:first-child{white-space:nowrap;width:150px}
 </style>
 </head>
 <body>
@@ -29,7 +31,7 @@
 <div class="topnote">本指南方便选手快速了解重要时间、地点和参赛安排。尚未明确或可能调整的事项，以组委会最新通知及现场工作人员指引为准。</div>
 <div class="actionbar"><button type="button" onclick="window.print()">打印 / 保存为 PDF</button><button type="button" class="secondary" onclick="document.getElementById('schedule').scrollIntoView()">查看赛程</button></div>
 </div></header>
-<nav class="topnav" aria-label="章节导航"><div class="container navinner"><a href="#overview">赛事概览</a><a href="#schedule">决赛日程</a><a href="#ceremony">闭幕颁奖</a><a href="#submission">提交与答辩</a><a href="#transport">交通指引</a><a href="#support">现场保障</a><a href="#checklist">出发清单</a></div></nav>
+<nav class="topnav" aria-label="章节导航"><div class="container navinner"><a href="#overview">赛事概览</a><a href="#schedule">决赛日程</a><a href="#ceremony">闭幕颁奖</a><a href="#submission">提交与答辩</a><a href="#transport">交通指引</a><a href="#support">现场保障</a></div></nav>
 <main class="container main">
 <section class="section" id="overview"><div class="accent">01 / OVERVIEW</div><h2>赛事概览</h2><p class="section-lead">先确认两个地点和各自赛道的签到时间。</p>
 <div class="kv"><div class="k">比赛时间</div><div class="v">11月28日—11月30日</div><div class="k">签到及住宿</div><div class="v">深铁前海君璞书院<br>深圳市南山区桂湾四路99号</div><div class="k">比赛地点</div><div class="v">微众银行大厦<br>深圳市南山区金港街88号</div></div>
@@ -72,8 +74,6 @@
 <tr><td><strong>交通报销</strong></td><td>按赛事规定报销往返深圳的大交通费用，高铁二等座或机票经济舱；请保存符合要求的报销凭证。</td></tr>
 <tr><td><strong>参赛设备</strong></td><td>根据赛制要求自备电脑及必要设备，妥善保管个人财物和作品。</td></tr>
 <tr><td><strong>参赛服装</strong></td><td>比赛及相关活动期间按要求统一穿着组委会发放的队服。</td></tr>
-</tbody></table></div><div class="note">如有晚到、行程调整、身体不适、设备故障或其他紧急情况，请及时联系工作人员或群内小助手。</div></section>
-<section class="section" id="checklist"><div class="accent">07 / CHECKLIST</div><h2>出发前检查清单</h2><ul class="checklist"><li>确认所属赛道及签到时间</li><li>保存酒店、赛场地址和导航路线</li><li>携带有效身份证件</li><li>准备电脑、电源、转接头及U盘</li><li>备份最终作品与答辩PPT</li><li>确认材料提交和答辩时间</li><li>保留交通票据与报销凭证</li><li>持续关注组委会群内通知</li></ul>
-<h3 class="subhead">现场联系人</h3><p><strong>许老师：</strong>13770092727　 <strong>汪老师：</strong>13515560940　 <strong>梁老师：</strong>13428971793</p><p class="small">赛程、集合与现场安排如有调整，以组委会实际通知为准。</p></section>
+</tbody></table></div><div class="note">如有晚到、行程调整、身体不适、设备故障或其他紧急情况，请及时联系工作人员或群内小助手。</div><h3 class="
 </main><footer class="footer">2026 FinTechathon · 决赛参赛指南（人工智能赛道国内 / 数据分析赛道）</footer>
 </body></html>
