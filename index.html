@@ -248,7 +248,14 @@ th,td {overflow-wrap:normal;word-break:normal}
  #challenges>.note{font-size:10pt!important;margin:8pt 0 0!important;padding:7pt 10pt!important;break-inside:avoid-page!important}
  #challenges .task-table tr{break-inside:avoid-page!important}
 }
-</style></head>
+</style>
+<style>
+/* 签到照片和左侧文字垂直对齐：下移照片，不改变其他内容 */
+@media screen and (min-width:741px){.checkin-figure{margin-top:58px;}}
+@media screen and (max-width:740px){.checkin-figure{margin-top:0;}}
+@media print{.checkin-figure{margin-top:30pt!important;}}
+</style>
+</head>
 <body>
 <header><div class="container header-inner">
 <div class="eyebrow">2026 深圳国际金融科技大赛 · 选手使用版</div>
