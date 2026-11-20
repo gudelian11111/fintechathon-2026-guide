@@ -216,13 +216,45 @@ th,td {overflow-wrap:normal;word-break:normal}
 .scope-line .scope-separator{font-weight:650;color:#8294a7;}
 @media (max-width:720px){.scope-line{font-size:16px;column-gap:7px;}}
 @media print {.scope-line{font-size:13pt;margin-top:12pt;line-height:1.3;}}
+</style><style>
+/* 2026-11-20: Unified contest-task grids, less dead space, official source disclaimer */
+#challenges .task-table{margin-top:14px;margin-bottom:23px;border-color:#c8d8e7}
+#challenges .task-table table{width:100%;min-width:670px;table-layout:fixed;border-collapse:collapse}
+#challenges .task-table thead{background:#e3eefb;color:#173e6a}
+#challenges .task-table th,#challenges .task-table td{vertical-align:middle;padding:13px 13px;line-height:1.58}
+#challenges .task-table td{overflow-wrap:anywhere;word-break:normal}
+#challenges .task-table td:nth-child(1),#challenges .task-table th:nth-child(1){width:8%!important;text-align:center;white-space:nowrap;overflow-wrap:normal;font-weight:800;color:#1c507c}
+#challenges .ai-table table th:nth-child(2),#challenges .ai-table table td:nth-child(2){width:24%!important;text-align:left;white-space:nowrap;word-break:keep-all}
+#challenges .ai-table table th:nth-child(3),#challenges .ai-table table td:nth-child(3){width:68%!important;text-align:left}
+#challenges .data-table table th:nth-child(2),#challenges .data-table table td:nth-child(2){width:48%!important;text-align:left;white-space:normal;overflow-wrap:normal}
+#challenges .data-table table th:nth-child(3),#challenges .data-table table td:nth-child(3){width:44%!important;text-align:left;white-space:normal;overflow-wrap:normal}
+#challenges .task-table tbody tr:nth-child(even){background:#f7fafc}
+#challenges .task-table .task-number{font-variant-numeric:tabular-nums}
+#challenges>.note{margin:10px 0 0;padding:12px 16px;font-size:16px;line-height:1.55}
+@media(max-width:720px){
+ #challenges .task-table{overflow-x:auto;-webkit-overflow-scrolling:touch}
+ #challenges .task-table table{min-width:660px!important;font-size:15px}
+ #challenges .task-table th,#challenges .task-table td{padding:12px 11px}
+ #challenges>.note{font-size:15px}
+}
+@media print{
+ #challenges .task-table table{min-width:0!important;table-layout:fixed!important;font-size:9.6pt!important;line-height:1.35!important}
+ #challenges .task-table th,#challenges .task-table td{padding:6pt 6.6pt!important;vertical-align:middle!important;line-height:1.36!important;overflow-wrap:normal!important;word-break:normal!important}
+ #challenges .task-table td:nth-child(1),#challenges .task-table th:nth-child(1){width:8%!important;font-size:9.1pt!important;white-space:nowrap!important;text-align:center!important}
+ #challenges .ai-table table th:nth-child(2),#challenges .ai-table table td:nth-child(2){width:26%!important;white-space:nowrap!important;font-size:9.45pt!important}
+ #challenges .ai-table table th:nth-child(3),#challenges .ai-table table td:nth-child(3){width:66%!important;white-space:normal!important}
+ #challenges .data-table table th:nth-child(2),#challenges .data-table table td:nth-child(2){width:47%!important;white-space:normal!important}
+ #challenges .data-table table th:nth-child(3),#challenges .data-table table td:nth-child(3){width:45%!important;white-space:normal!important}
+ #challenges>.note{font-size:10pt!important;margin:8pt 0 0!important;padding:7pt 10pt!important;break-inside:avoid-page!important}
+ #challenges .task-table tr{break-inside:avoid-page!important}
+}
 </style></head>
 <body>
 <header><div class="container header-inner">
 <div class="eyebrow">2026 深圳国际金融科技大赛 · 选手使用版</div>
 <h1>FinTechathon 决赛参赛指南</h1>
 <p class="lead">到场及赛事安排：2026年11月27日—30日 · 中国深圳</p>
-<p class="scope-line"><span class="scope-label">适用赛道：</span><strong>人工智能赛道（国内）</strong><span class="scope-separator" aria-hidden="true">·</span><strong>数据分析赛道</strong></p>
+<p class="scope-line"><span class="scope-label">适用赛道：</span><strong>人工智能赛道（国内）</strong><span aria-hidden="true" class="scope-separator">·</span><strong>数据分析赛道</strong></p>
 <div class="topnote">本指南方便选手快速了解重要时间、地点和参赛安排。尚未明确或可能调整的事项，以组委会最新通知及现场工作人员指引为准。</div>
 <div class="actionbar"><button onclick="window.print()" type="button">打印 / 保存为 PDF</button><button class="secondary" onclick="document.getElementById('schedule').scrollIntoView()" type="button">查看赛程</button></div>
 </div></header>
@@ -269,24 +301,24 @@ th,td {overflow-wrap:normal;word-break:normal}
 <p class="section-lead">根据本届赛事手册整理，仅展示本指南适用的国内人工智能赛道与数据分析赛道。</p>
 <h3 class="subhead">国内人工智能赛道｜银行 AI 智能体</h3>
 <p>聚焦<strong>“AI 代人操作银行”（安全＋体验）</strong>。参赛团队需构建 AI Banking Agent 系统，通过自然语言对话理解金融意图，自主规划并执行银行业务操作，支持通过 APP、IM 等渠道与用户连接。系统<strong>至少覆盖以下3个核心场景</strong>，鼓励完整覆盖全部场景。</p>
-<div class="tablewrap task-table"><table><thead><tr><th>核心场景</th><th>典型能力示例</th></tr></thead><tbody>
-<tr><td><strong>智能转账</strong></td><td>按人名、手机号、备注转账；定时转账、拆分 AA 收款</td></tr>
-<tr><td><strong>账单分析</strong></td><td>消费分类统计、异常交易识别、月度／年度账单报告</td></tr>
-<tr><td><strong>理财操作</strong></td><td>产品推荐与对比、风险评估、一键申购／赎回</td></tr>
-<tr><td><strong>卡片管理</strong></td><td>卡申请、额度调整、交易限制／解锁、卡片挂失</td></tr>
-<tr><td><strong>订阅／代扣管理</strong></td><td>自动识别订阅扣费、续费提醒、一键取消订阅</td></tr>
-<tr><td><strong>跨场景联动</strong></td><td>识别生日提醒，锁定当月活期资金，并在生日前安排鲜花、蛋糕订购等联动任务</td></tr>
+<div class="tablewrap task-table ai-table"><table><thead><tr><th>序号</th><th>核心场景</th><th>典型能力示例</th></tr></thead><tbody>
+<tr><td class="task-number">01</td><td><strong>智能转账</strong></td><td>按人名、手机号、备注转账；定时转账、拆分 AA 收款</td></tr>
+<tr><td class="task-number">02</td><td><strong>账单分析</strong></td><td>消费分类统计、异常交易识别、月度／年度账单报告</td></tr>
+<tr><td class="task-number">03</td><td><strong>理财操作</strong></td><td>产品推荐与对比、风险评估、一键申购／赎回</td></tr>
+<tr><td class="task-number">04</td><td><strong>卡片管理</strong></td><td>卡申请、额度调整、交易限制／解锁、卡片挂失</td></tr>
+<tr><td class="task-number">05</td><td><strong>订阅／代扣管理</strong></td><td>自动识别订阅扣费、续费提醒、一键取消订阅</td></tr>
+<tr><td class="task-number">06</td><td><strong>跨场景联动</strong></td><td>识别生日提醒，锁定当月活期资金，并在生日前安排鲜花、蛋糕订购等联动任务</td></tr>
 </tbody></table></div>
 <h3 class="subhead">数据分析赛道｜五道赛题</h3>
 <p>围绕金融科技真实业务场景，考察数据获取、分析建模与业务落地能力。<strong>参赛团队任选一题作答。</strong></p>
-<div class="tablewrap task-table"><table><thead><tr><th>赛题</th><th>官方赛题名称</th><th>研究重点（简述）</th></tr></thead><tbody>
+<div class="tablewrap task-table data-table"><table><thead><tr><th>赛题</th><th>官方赛题名称</th><th>研究重点（简述）</th></tr></thead><tbody>
 <tr><td class="date">01</td><td><strong>授信客户风险评分稳定性研究</strong></td><td>兼顾授信风险评分的区分能力与跨时点评分稳定性</td></tr>
 <tr><td class="date">02</td><td><strong>基于应用图谱信息的经营类客户风控模型的构建</strong></td><td>结合关联图谱、风险事件与传导路径识别经营类客户信用风险</td></tr>
 <tr><td class="date">03</td><td><strong>基于公开数据的小微企业经营风险指标体系构建及验证</strong></td><td>整合公开数据，构建并验证小微企业经营风险指标体系</td></tr>
 <tr><td class="date">04</td><td><strong>刷单等非规范经营行为的识别</strong></td><td>识别虚假交易、刷单、伪造流水等非规范经营行为</td></tr>
 <tr><td class="date">05</td><td><strong>基于原始量价数据的股票收益预测</strong></td><td>基于股票日线量价数据预测未来一天收益率</td></tr>
 </tbody></table></div>
-<div class="note">这里提供的是选手快速查阅版。各题的完整任务描述和数据要求，请以本届赛事手册及赛题文件为准。</div>
+<div class="note"><strong>提示：</strong>具体赛题内容及要求以大赛官网公布的信息为准。</div>
 </section><section class="section" id="awards"><div class="section-intro"><div class="accent">06 / AWARDS</div><h2>奖项设置</h2></div>
 <p class="section-lead">以下奖项数量与奖金标准依据本届赛事手册列示。</p>
 <div class="award-grid">
