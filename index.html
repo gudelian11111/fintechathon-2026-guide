@@ -207,13 +207,22 @@ th,td {overflow-wrap:normal;word-break:normal}
    white-space:nowrap!important; word-break:keep-all!important;
  }
 }
+</style><style>
+/* "适用赛道"为静态说明文字，不使用标签按钮视觉 */
+.pills,.pill {display:none!important}
+.scope-line{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:10px;row-gap:5px;margin:20px 0 0;color:#1b3651;font-size:18px;line-height:1.6;letter-spacing:0;}
+.scope-line .scope-label{font-weight:600;color:#52677d;}
+.scope-line strong{font-weight:720;color:#153b69;}
+.scope-line .scope-separator{font-weight:650;color:#8294a7;}
+@media (max-width:720px){.scope-line{font-size:16px;column-gap:7px;}}
+@media print {.scope-line{font-size:13pt;margin-top:12pt;line-height:1.3;}}
 </style></head>
 <body>
 <header><div class="container header-inner">
 <div class="eyebrow">2026 深圳国际金融科技大赛 · 选手使用版</div>
 <h1>FinTechathon 决赛参赛指南</h1>
 <p class="lead">到场及赛事安排：2026年11月27日—30日 · 中国深圳</p>
-<div class="pills"><span class="pill">人工智能赛道（国内）</span><span class="pill">数据分析赛道</span></div>
+<p class="scope-line"><span class="scope-label">适用赛道：</span><strong>人工智能赛道（国内）</strong><span class="scope-separator" aria-hidden="true">·</span><strong>数据分析赛道</strong></p>
 <div class="topnote">本指南方便选手快速了解重要时间、地点和参赛安排。尚未明确或可能调整的事项，以组委会最新通知及现场工作人员指引为准。</div>
 <div class="actionbar"><button onclick="window.print()" type="button">打印 / 保存为 PDF</button><button class="secondary" onclick="document.getElementById('schedule').scrollIntoView()" type="button">查看赛程</button></div>
 </div></header>
@@ -224,7 +233,7 @@ th,td {overflow-wrap:normal;word-break:normal}
 <h3 class="subhead">签到安排</h3><div class="tablewrap"><table><thead><tr><th>赛道</th><th>签到时间</th><th>主要事项</th></tr></thead><tbody><tr><td>国内人工智能赛道</td><td>11月27日 09:00—21:00</td><td>签到入住、团队定妆照</td></tr><tr><td>数据分析赛道</td><td>11月28日 09:00—21:00</td><td>签到入住、团队定妆照</td></tr></tbody></table></div>
 <div class="checkin-layout">
 <div class="checkin-reminders">
-<h3 class="subhead">签到提醒</h3><ul class="items"><li>携带有效身份证件，按现场要求办理签到入住。</li><li>请尽量协调全员到齐拍摄团队定妆照，并统一穿着参赛队服。</li><li>签到后及时关注群消息，查看集合、用餐及出发安排。</li></ul>
+<h3 class="subhead">签到提醒</h3><ul class="items"><li>携带有效身份证件，按现场要求办理签到入住，并签署安全承诺书。</li><li>请尽量协调全员到齐拍摄团队定妆照，并统一穿着参赛队服。</li><li>签到后及时关注群消息，查看集合、用餐及出发安排。</li></ul>
 <div class="note">酒店与比赛场地并非同一地点。请先前往酒店签到入住，再按通知前往微众银行大厦参赛。</div>
 </div>
 <figure class="checkin-figure">
@@ -286,7 +295,7 @@ th,td {overflow-wrap:normal;word-break:normal}
 <div class="award-tile"><div class="award-tier">三等奖</div><div class="award-money">¥50,000</div><p><strong>3支团队</strong> · 荣誉证书1份、奖杯、奖牌</p></div>
 <div class="award-tile"><div class="award-tier">最佳创意奖</div><div class="award-money">¥20,000</div><p><strong>3支团队</strong> · 荣誉证书1份、奖牌</p></div>
 </div>
-<div class="note"><strong>十强荣誉：</strong>三个赛道第4—10名将获得十强荣誉证书。以上“3支团队”为手册所列各奖项总数，不代表每个赛道分别设3个同等级奖项。</div>
+<div class="note"><strong>奖项说明：</strong>每个赛道各评选一等奖、二等奖、三等奖及最佳创意奖各1队，三个赛道合计每类3队；上述奖金均为<strong>税前金额</strong>。三个赛道第4—10名将获得十强荣誉证书。</div>
 </section><section class="section" id="transport"><div class="section-intro"><div class="accent">07 / TRANSPORTATION</div><h2>怎么走？交通指引</h2></div><p class="section-lead">签到目的地：深铁前海君璞书院（桂湾四路99号）。可乘地铁1号线至“鲤鱼门站”，<strong>从D口出站，步行约20米即可抵达酒店大堂</strong>。</p>
 <h3 class="subhead">到达酒店的常用方式</h3><div class="tablewrap"><table><thead><tr><th>出发地</th><th>公共交通参考路线</th><th>地铁参考用时</th><th>打车参考用时</th></tr></thead><tbody>
 <tr><td>深圳宝安机场</td><td>11号线 → 前海湾站换乘1号线 → 鲤鱼门站</td><td>约35—55分钟</td><td>约25—45分钟</td></tr>
@@ -296,8 +305,8 @@ th,td {overflow-wrap:normal;word-break:normal}
 </tbody></table></div><h3 class="subhead">酒店前往赛场</h3><p>深铁前海君璞书院至微众银行大厦，<strong>步行参考约10—15分钟</strong>。</p><div class="note warn">以上仅为出行时间估算，不是实时导航结果。请出行前在地图软件中核对实际地铁路线、出口、交通状况及用时，并预留余量。</div></section>
 <section class="section" id="support"><div class="section-intro"><div class="accent">08 / ON-SITE SUPPORT</div><h2>现场保障</h2></div><div class="tablewrap"><table><thead><tr><th>项目</th><th>说明</th></tr></thead><tbody>
 <tr><td><strong>住宿</strong></td><td>组委会统一安排标间，每房2人；人工智能赛道（国内）安排3晚，数据分析赛道安排2晚；11月30日12:00前退房。</td></tr>
-<tr><td><strong>用餐</strong></td><td>人工智能赛道：11月28日、29日午餐和晚餐；数据分析赛道：11月29日午餐和晚餐。按现场安排就餐。</td></tr>
-<tr><td><strong>交通报销</strong></td><td>按赛事规定报销往返深圳的大交通费用，高铁二等座或机票经济舱；请保存符合要求的报销凭证。</td></tr>
+<tr><td><strong>用餐</strong></td><td>国内人工智能赛道：11月28日、29日午餐及晚餐；数据分析赛道：11月29日午餐及晚餐。凭餐券在微众银行食堂就餐。</td></tr>
+<tr><td><strong>交通报销</strong></td><td>按赛事规定报销往返深圳的大交通费用（高铁二等座或机票经济舱），出发及回程城市原则上为学校所在城市；请妥善保存交通票据、发票等凭证。</td></tr>
 <tr><td><strong>参赛设备</strong></td><td>根据赛制要求自备电脑及必要设备，妥善保管个人财物和作品。</td></tr>
 <tr><td><strong>参赛服装</strong></td><td>比赛及相关活动期间按要求统一穿着组委会发放的队服。</td></tr>
 </tbody></table></div><div class="note">如有晚到、行程调整、身体不适、设备故障或其他紧急情况，请及时联系工作人员或群内小助手。</div><h3 class="subhead">现场联系人</h3><div class="contact-grid"><div class="contact"><strong>许老师：</strong>13770092727</div><div class="contact"><strong>汪老师：</strong>13515560940</div><div class="contact"><strong>梁老师：</strong>13428971793</div><div class="contact"><strong>雷老师：</strong>17600409720</div></div></section>
