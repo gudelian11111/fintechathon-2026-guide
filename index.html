@@ -170,12 +170,49 @@ th,td {overflow-wrap:normal;word-break:normal}
  .award-tile p{font-size:10.3pt!important}
  #awards .note{break-inside:avoid-page}
 }
-</style><style>@media print{#challenges,#awards{break-before:page!important;page-break-before:always!important;}#challenges>.section-intro,#awards>.section-intro{break-after:avoid-page!important;} #challenges>.section-lead,#awards>.section-lead{break-after:avoid-page!important;}}</style></head>
+</style><style>@media print{#challenges,#awards{break-before:page!important;page-break-before:always!important;}#challenges>.section-intro,#awards>.section-intro{break-after:avoid-page!important;} #challenges>.section-lead,#awards>.section-lead{break-after:avoid-page!important;}}</style><style>
+/* 终版排版检查：短字段/表头单行，窄屏采用上下排列，打印版适当加宽字段列 */
+.kv {grid-template-columns:225px minmax(0,1fr);}
+.kv .k {white-space:nowrap;word-break:keep-all;overflow-wrap:normal;}
+.kv .v {min-width:0;}
+.tablewrap th {white-space:nowrap;word-break:keep-all;}
+#schedule td:first-child, #overview table td:first-child,
+#submission table td:first-child, #transport table td:first-child,
+#support table td:first-child, #challenges .task-table:first-of-type td:first-child {
+  white-space:nowrap; word-break:keep-all; overflow-wrap:normal;
+}
+/* mobile: keep all field names whole, no narrow two-column grid */
+@media(max-width:720px){
+ .kv{grid-template-columns:minmax(0,1fr);overflow:visible;}
+ .kv .k{padding:9px 13px 0!important;border-bottom:0!important;background:#eef4fa!important;font-size:16px!important;}
+ .kv .v{padding:2px 13px 11px!important;background:#eef4fa;border-bottom:1px solid #d9e2eb!important;font-size:16px!important;}
+ .kv .v:last-child{border-bottom:0!important;}
+ .tablewrap table {min-width:680px;}
+ #support .tablewrap table{min-width:580px;}
+}
+@media print {
+ /* A4 内容宽度约 504pt，左列 147pt 可完整容纳“活动日期（含签到）” */
+ #overview .kv{grid-template-columns:150pt minmax(0,1fr)!important;}
+ #overview .kv .k{white-space:nowrap!important;word-break:keep-all!important;
+    font-size:11pt!important;line-height:1.35!important;}
+ .kv .v{min-width:0!important;}
+ .tablewrap th{white-space:nowrap!important;}
+ #support .tablewrap td:first-child, #support .tablewrap th:first-child{
+   width:108pt!important;min-width:108pt!important;white-space:nowrap!important;
+ }
+ /* Short labels never split in the PDF */
+ #schedule table td:first-child, #overview table td:first-child,
+ #submission table td:first-child, #transport table td:first-child,
+ #challenges .task-table:first-of-type table td:first-child {
+   white-space:nowrap!important; word-break:keep-all!important;
+ }
+}
+</style></head>
 <body>
 <header><div class="container header-inner">
 <div class="eyebrow">2026 深圳国际金融科技大赛 · 选手使用版</div>
 <h1>FinTechathon 决赛参赛指南</h1>
-<p class="lead">到场及赛事安排：2026年11月27日—30日 · 中国深圳（正式比赛11月28日—30日）</p>
+<p class="lead">到场及赛事安排：2026年11月27日—30日 · 中国深圳</p>
 <div class="pills"><span class="pill">人工智能赛道（国内）</span><span class="pill">数据分析赛道</span></div>
 <div class="topnote">本指南方便选手快速了解重要时间、地点和参赛安排。尚未明确或可能调整的事项，以组委会最新通知及现场工作人员指引为准。</div>
 <div class="actionbar"><button onclick="window.print()" type="button">打印 / 保存为 PDF</button><button class="secondary" onclick="document.getElementById('schedule').scrollIntoView()" type="button">查看赛程</button></div>
