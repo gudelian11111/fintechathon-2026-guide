@@ -287,27 +287,54 @@ th,td {overflow-wrap:normal;word-break:normal}
   #venue .venue-note{font-size:9.4pt!important;line-height:1.4!important;padding:7pt 9pt!important;margin-top:9pt!important;}
 }
 </style>
-
 <style>
-/* 决赛日程增加地点列，防止五列被压缩导致赛道名称断行。 */
-#schedule .tablewrap{overflow-x:auto}
-#schedule table{table-layout:fixed;min-width:1080px;line-height:1.48}
-#schedule table th:nth-child(1),#schedule table td:nth-child(1){width:12%;white-space:nowrap}
-#schedule table th:nth-child(2),#schedule table td:nth-child(2){width:15%;white-space:nowrap}
-#schedule table th:nth-child(3),#schedule table td:nth-child(3){width:29%}
-#schedule table th:nth-child(4),#schedule table td:nth-child(4){width:23%;white-space:normal}
-#schedule table th:nth-child(5),#schedule table td:nth-child(5){width:21%;white-space:nowrap}
-#schedule table td.location{font-size:15px;line-height:1.45;color:#254b6e;vertical-align:middle}
-@media(max-width:720px){#schedule table{min-width:1050px}#schedule table td.location{font-size:15px}}
+/* 日程表自适应：大屏五列完整展示，中小屏按行重排为独立信息卡片。 */
+@media screen {
+  #schedule .tablewrap{width:100%;max-width:100%;overflow:visible!important;}
+  #schedule table{width:100%!important;min-width:0!important;max-width:100%!important;table-layout:fixed!important;font-size:15px;line-height:1.5;}
+  #schedule th,#schedule td{padding:11px 9px;word-break:normal!important;overflow-wrap:anywhere!important;white-space:normal!important;vertical-align:middle;}
+  #schedule table th:nth-child(1),#schedule table td:nth-child(1){width:12%;white-space:nowrap!important;}
+  #schedule table th:nth-child(2),#schedule table td:nth-child(2){width:14%;font-variant-numeric:tabular-nums;}
+  #schedule table th:nth-child(3),#schedule table td:nth-child(3){width:30%;}
+  #schedule table th:nth-child(4),#schedule table td:nth-child(4){width:25%;}
+  #schedule table th:nth-child(5),#schedule table td:nth-child(5){width:19%;font-size:14px;}
+  #schedule table td.location{font-size:14px;line-height:1.48;color:#254b6e;}
+}
+@media screen and (min-width:1160px){
+ .container{max-width:1220px;}
+ #schedule table{font-size:16px;}
+ #schedule table th,#schedule table td{padding:13px 11px;}
+ #schedule table td.location{font-size:15px;}
+ #schedule table th:nth-child(5),#schedule table td:nth-child(5){font-size:15px;}
+}
+@media screen and (max-width:940px){
+ #schedule .tablewrap{border:0!important;border-radius:0;margin:12px 0 18px;}
+ #schedule table,#schedule tbody,#schedule tr,#schedule td{display:block!important;box-sizing:border-box!important;width:100%!important;min-width:0!important;max-width:100%!important;}
+ #schedule table{border-collapse:separate!important;border-spacing:0!important;}
+ #schedule thead{display:none!important;}
+ #schedule tr{margin:0 0 12px;border:1px solid #cbd9e8;border-radius:10px;overflow:hidden;background:#fff!important;box-shadow:0 1px 3px #203b5b0d;}
+ #schedule td{display:grid!important;grid-template-columns:90px minmax(0,1fr);gap:8px;align-items:start;padding:10px 12px!important;border-bottom:1px solid #e3eaf2;font-size:15px!important;line-height:1.5;}
+ #schedule td:last-child{border-bottom:0;}
+ #schedule td::before{content:attr(data-label);display:block;color:#1b4a7f;font-size:14px;font-weight:800;white-space:nowrap;}
+ #schedule td.date{white-space:normal!important;}
+ #schedule td.location{font-size:15px!important;}
+ #schedule tr:nth-child(even) td{background:#f7fafc;}
+}
+@media screen and (max-width:430px){
+ #schedule td{grid-template-columns:72px minmax(0,1fr);gap:7px;padding:9px 10px!important;font-size:14px!important;}
+ #schedule td::before{font-size:13px;}
+ #schedule td.location{font-size:14px!important;}
+}
 @media print{
+ #schedule .tablewrap{overflow:visible!important;}
  #schedule table{width:100%!important;min-width:0!important;table-layout:fixed!important;font-size:9.1pt!important;line-height:1.32!important;}
  #schedule table th,#schedule table td{padding:5.8pt 4.4pt!important;vertical-align:middle!important;overflow-wrap:normal!important;word-break:normal!important;}
  #schedule table th:nth-child(1),#schedule table td:nth-child(1){width:12%!important;white-space:nowrap!important;font-size:8.6pt!important;}
  #schedule table th:nth-child(2),#schedule table td:nth-child(2){width:15%!important;white-space:nowrap!important;font-size:8.4pt!important;letter-spacing:-.15pt!important;}
- #schedule table th:nth-child(3),#schedule table td:nth-child(3){width:27%!important;white-space:normal!important;font-size:8.8pt!important;}
- #schedule table th:nth-child(4),#schedule table td:nth-child(4){width:23%!important;white-space:normal!important;font-size:8.3pt!important;line-height:1.32!important;}
- #schedule table th:nth-child(5),#schedule table td:nth-child(5){width:23%!important;white-space:normal!important;font-size:8.8pt!important;line-height:1.38!important;letter-spacing:-.15pt!important;}
- #schedule table td.location{color:#254b6e!important}
+ #schedule table th:nth-child(3),#schedule table td:nth-child(3){width:28%!important;white-space:normal!important;font-size:8.8pt!important;}
+ #schedule table th:nth-child(4),#schedule table td:nth-child(4){width:24%!important;white-space:normal!important;font-size:8.3pt!important;line-height:1.32!important;}
+ #schedule table th:nth-child(5),#schedule table td:nth-child(5){width:21%!important;white-space:normal!important;font-size:8.6pt!important;line-height:1.38!important;letter-spacing:-.15pt!important;}
+ #schedule table td.location{color:#254b6e!important;}
 }
 </style></head>
 <body>
@@ -336,19 +363,19 @@ th,td {overflow-wrap:normal;word-break:normal}
 </div></section>
 <section class="section" id="schedule"><div class="section-intro"><div class="accent">02 / SCHEDULE</div><h2>决赛日程表</h2></div><p class="section-lead">按日期集中查看，特别注意两条赛道的不同安排。</p>
 <h3 class="subhead">11月27日—28日</h3><div class="tablewrap"><table><thead><tr><th>日期</th><th>时间</th><th>活动</th><th>地点</th><th>适用赛道</th></tr></thead><tbody>
-<tr><td class="date">11月27日</td><td>09:00—21:00</td><td>签到入住、团队定妆照</td><td class="location">深铁前海君璞书院（签到处）</td><td>人工智能赛道（国内）</td></tr>
-<tr><td class="date">11月27日</td><td>15:00—15:30</td><td>参观微众银行（以最终安排为准）</td><td class="location">微众银行大厦（按现场通知）</td><td>人工智能赛道（国内）</td></tr>
-<tr><td class="date">11月28日</td><td>09:00—21:00</td><td>签到入住、团队定妆照</td><td class="location">深铁前海君璞书院（签到处）</td><td>数据分析赛道</td></tr>
-<tr><td class="date">11月28日</td><td>09:00—23:00</td><td>黑客松比赛：09:00—12:00、13:00—18:00、19:00—23:00</td><td class="location">微众银行大厦7楼 · 711、713室</td><td>人工智能赛道（国内）</td></tr>
+<tr><td data-label="日期" class="date">11月27日</td><td data-label="时间">09:00—21:00</td><td data-label="活动">签到入住、团队定妆照</td><td data-label="地点" class="location">深铁前海君璞书院（签到处）</td><td data-label="适用赛道">人工智能赛道（国内）</td></tr>
+<tr><td data-label="日期" class="date">11月27日</td><td data-label="时间">15:00—15:30</td><td data-label="活动">参观微众银行（以最终安排为准）</td><td data-label="地点" class="location">微众银行大厦（按现场通知）</td><td data-label="适用赛道">人工智能赛道（国内）</td></tr>
+<tr><td data-label="日期" class="date">11月28日</td><td data-label="时间">09:00—21:00</td><td data-label="活动">签到入住、团队定妆照</td><td data-label="地点" class="location">深铁前海君璞书院（签到处）</td><td data-label="适用赛道">数据分析赛道</td></tr>
+<tr><td data-label="日期" class="date">11月28日</td><td data-label="时间">09:00—23:00</td><td data-label="活动">黑客松比赛：09:00—12:00、13:00—18:00、19:00—23:00</td><td data-label="地点" class="location">微众银行大厦7楼 · 711、713室</td><td data-label="适用赛道">人工智能赛道（国内）</td></tr>
 </tbody></table></div>
 <h3 class="subhead">11月29日—30日</h3><div class="tablewrap"><table><thead><tr><th>日期</th><th>时间</th><th>活动</th><th>地点</th><th>适用赛道</th></tr></thead><tbody>
-<tr><td class="date">11月29日</td><td>09:00—12:00</td><td><strong>黑客松比赛、路演顺序抽签、答辩设备测试</strong></td><td class="location">黑客松：711、713室<br/>抽签与测试：706、707室（答辩室）</td><td>人工智能赛道（国内）</td></tr>
-<tr><td class="date">11月29日</td><td>12:00</td><td><strong>黑客松比赛结束，提交最终作品与答辩PPT</strong></td><td class="location">黑客松区711、713室（提交按现场指引）</td><td>人工智能赛道（国内）</td></tr>
-<tr><td class="date">11月29日</td><td>09:30—10:00</td><td>参观微众银行</td><td class="location">微众银行大厦</td><td>数据分析赛道</td></tr>
-<tr><td class="date">11月29日</td><td>10:00—12:00</td><td><strong>路演顺序抽签、答辩设备测试；提交最终作品及答辩PPT</strong></td><td class="location">抽签与测试：716室（答辩室）<br/>材料提交按现场指引</td><td>数据分析赛道</td></tr>
-<tr><td class="date">11月29日</td><td>14:00—17:30</td><td><strong>决赛路演答辩</strong></td><td class="location">人工智能：706、707室<br/>数据分析：716室</td><td>两个赛道</td></tr>
-<tr><td class="date">11月30日</td><td>09:00—11:30</td><td><strong>颁奖典礼（请全程参与）</strong></td><td class="location">微众银行大厦（会场以现场通知为准）</td><td>两个赛道</td></tr>
-<tr><td class="date">11月30日</td><td>12:00前</td><td>酒店退房</td><td class="location">深铁前海君璞书院</td><td>两个赛道</td></tr>
+<tr><td data-label="日期" class="date">11月29日</td><td data-label="时间">09:00—12:00</td><td data-label="活动"><strong>黑客松比赛、路演顺序抽签、答辩设备测试</strong></td><td data-label="地点" class="location">黑客松：711、713室<br/>抽签、测试：706、707室</td><td data-label="适用赛道">人工智能赛道（国内）</td></tr>
+<tr><td data-label="日期" class="date">11月29日</td><td data-label="时间">12:00</td><td data-label="活动"><strong>黑客松比赛结束，提交最终作品与答辩PPT</strong></td><td data-label="地点" class="location">711、713室（材料提交按现场指引）</td><td data-label="适用赛道">人工智能赛道（国内）</td></tr>
+<tr><td data-label="日期" class="date">11月29日</td><td data-label="时间">09:30—10:00</td><td data-label="活动">参观微众银行</td><td data-label="地点" class="location">微众银行大厦</td><td data-label="适用赛道">数据分析赛道</td></tr>
+<tr><td data-label="日期" class="date">11月29日</td><td data-label="时间">10:00—12:00</td><td data-label="活动"><strong>路演顺序抽签、答辩设备测试；提交最终作品及答辩PPT</strong></td><td data-label="地点" class="location">抽签、测试：716室<br/>材料提交按现场指引</td><td data-label="适用赛道">数据分析赛道</td></tr>
+<tr><td data-label="日期" class="date">11月29日</td><td data-label="时间">14:00—17:30</td><td data-label="活动"><strong>决赛路演答辩</strong></td><td data-label="地点" class="location">人工智能：706、707室<br/>数据分析：716室</td><td data-label="适用赛道">两个赛道</td></tr>
+<tr><td data-label="日期" class="date">11月30日</td><td data-label="时间">09:00—11:30</td><td data-label="活动"><strong>颁奖典礼（请全程参与）</strong></td><td data-label="地点" class="location">微众银行大厦（会场以现场通知为准）</td><td data-label="适用赛道">两个赛道</td></tr>
+<tr><td data-label="日期" class="date">11月30日</td><td data-label="时间">12:00前</td><td data-label="活动">酒店退房</td><td data-label="地点" class="location">深铁前海君璞书院</td><td data-label="适用赛道">两个赛道</td></tr>
 </tbody></table></div><div class="note">11月29日是重要答辩日，须按抽签顺序和现场候场要求提前到场。</div></section>
 <section class="section keep-together" id="ceremony"><div class="section-intro"><div class="accent">03 / AWARD CEREMONY</div><h2>颁奖典礼</h2></div><p class="section-lead">决赛结束后将举行颁奖典礼，请将这一安排纳入返程计划。</p>
 <div class="ceremony-hero"><div class="eyebrow">11月30日 · 周一</div><div class="ceremony-date">09:00—11:30</div><div class="ceremony-place">地点：微众银行大厦</div><p style="margin:14px 0 0;color:#314c68">适用赛道：人工智能赛道（国内）、数据分析赛道</p></div>
