@@ -354,6 +354,57 @@ th,td {overflow-wrap:normal;word-break:normal}
 .venue-hide-711{left:80.5%;top:83.7%;width:15.6%;height:7.3%;}
 @media print{.venue-plan-wrap>img{max-height:none!important;object-fit:fill!important;}}
 </style>
+<style id="pdf-print-compact-layout-fix">
+/* PDF / paper output only. No screen-facing style changes. */
+@media print {
+  /* Shorter page margins leave less room for the browser's auto header/footer.
+     Browser print preferences may still need 'Headers and footers' disabled. */
+  @page {
+    size: A4;
+    margin: 8mm 14mm 9mm 14mm;
+    @top-left { content: ""; }
+    @top-center { content: ""; }
+    @top-right { content: ""; }
+    @bottom-left { content: ""; }
+    @bottom-center { content: ""; }
+    @bottom-right { content: ""; }
+  }
+  /* Let short sections flow together, overriding earlier forced page breaks. */
+  .section, .section.keep-together,
+  #overview, #schedule, #ceremony, #submission, #venue,
+  #challenges, #awards, #transport, #support {
+    break-before: auto !important;
+    page-break-before: auto !important;
+    break-after: auto !important;
+    page-break-after: auto !important;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+  /* Protect section headings from being stranded at the bottom of a sheet. */
+  .section-intro, .section-intro + .section-lead,
+  h2, h3, .subhead {
+    break-after: avoid-page !important;
+    page-break-after: avoid !important;
+  }
+  .section-intro {
+    break-inside: avoid-page !important;
+    page-break-inside: avoid !important;
+  }
+  /* Multi-card grids and long tables are allowed to flow across pages. */
+  .cards, .ceremony-grid, .award-grid, .tablewrap, #support .tablewrap {
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+  /* Keep small logical units intact; don't clip photographs or table rows. */
+  .card, .ceremony-tile, .award-tile, .note, .identity-notice,
+  .venue-figure, .checkin-figure, tr {
+    break-inside: avoid-page !important;
+    page-break-inside: avoid !important;
+  }
+  thead { display: table-header-group; }
+  img { max-width: 100%; }
+}
+</style>
 </head>
 <body>
 <header><div class="container header-inner">
